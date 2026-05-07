@@ -25,6 +25,10 @@ function iniciarContagem() {
         intervalo = setInterval(() => {
             tempo--;
             formatacaoTimer();
+
+            if (tempo <= 0) {
+                resetarContagem();
+            }
         }, 1000);
     //aqui criamos a função iniciarContagem, que é responsável por iniciar a contagem regressiva do temporizador. Dentro dessa função, usamos setInterval para executar uma função a cada 1000 milissegundos (1 segundo). A função dentro do setInterval decrementa o valor de tempo em 1 (tempo--) e chama a função formatacaoTimer() para atualizar o display do temporizador com o novo valor de tempo. Isso faz com que o temporizador seja atualizado a cada segundo, mostrando a contagem regressiva corretamente.
 }
@@ -44,8 +48,15 @@ function selecionarTempo(tipo) {
         tempo += 300; // 5 minutos em segundos
     } else if (tipo === 'descanso') {
         tempo = 300; // 5 minutos em segundos
+    } else if (tipo === 'reduzir') {
+        tempo -= 300; // 5 minutos em segundos
+        if (tempo <= 0) {
+            tempo = 0;
+        }
     }
 }
+
+
 
 
     iniciarContagem();
