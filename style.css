@@ -52,11 +52,19 @@ button{
     align-items: center;
 }
 .btn-tempo{
+    background-color: silver;
+    border: none;
     grid-area: pause;
     width: 200px;
     height: 50px;
     align-items: center;
     justify-content: center;
+}
+
+.btn-tempo:hover{
+    background-color: rgb(141, 141, 141);
+    color: aliceblue;
+    cursor: pointer;
 }
 
 .container{
@@ -70,7 +78,7 @@ button{
 .timer{
     background-color: rgb(216, 23, 65);
     width: 100%;
-    height: 50vw;
+    height: 40vw;
     display: grid;
     grid-template-columns:   1fr 1fr ;/*largura*/
     grid-template-rows: auto 1fr 1fr auto; /*altura*/
